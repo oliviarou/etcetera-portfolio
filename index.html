@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What We Build — Etcetera Enterprises</title>
+<style>
+  @page { margin: 0.45in; size: letter; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1a1a1a; line-height: 1.45; max-width: 8.5in; margin: 0 auto; padding: 25px 35px; font-size: 11px; }
+
+  /* Header */
+  .header { text-align: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #1a1a1a; }
+  .header h1 { font-size: 26px; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .header .tagline { font-size: 12px; color: #555; letter-spacing: 0.5px; }
+  .header .sub { font-size: 10px; color: #888; margin-top: 5px; }
+
+  /* Barnabas highlight */
+  .highlight-bar { background: #1a1a1a; color: white; padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+  .highlight-bar .left { flex: 1; }
+  .highlight-bar .left h3 { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .highlight-bar .left p { font-size: 10px; color: #ccc; }
+  .highlight-bar .stats { display: flex; gap: 18px; }
+  .highlight-bar .stat { text-align: center; }
+  .highlight-bar .stat .num { font-size: 20px; font-weight: 700; }
+  .highlight-bar .stat .lbl { font-size: 8px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; }
+
+  /* Client Card */
+  .client-card { margin-bottom: 14px; border: 1px solid #e0e0e0; border-radius: 6px; overflow: hidden; page-break-inside: avoid; }
+  .card-header { background: #1a1a1a; color: white; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; }
+  .card-header .client-name { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  .card-header .client-type { font-size: 10px; color: #aaa; }
+
+  /* Assess Phase Layout */
+  .assess-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+  .assess-cell { padding: 10px 14px; border-bottom: 1px solid #f0f0f0; border-left: 1px solid #f0f0f0; }
+  .assess-cell:first-child { border-left: none; }
+  .assess-cell.assess-reveal { background: #fafafa; }
+  .assess-cell h4 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 5px; }
+  .assess-cell p { font-size: 10.5px; color: #333; }
+  .assess-cell ul { list-style: none; padding: 0; }
+  .assess-cell ul li { font-size: 10.5px; padding: 1.5px 0; padding-left: 10px; position: relative; color: #333; }
+  .assess-cell ul li:before { content: "—"; position: absolute; left: 0; color: #bbb; font-size: 9px; }
+
+  /* Results + Quote Row */
+  .results-row { display: flex; align-items: stretch; border-top: 1px solid #f0f0f0; }
+  .metrics-col { display: flex; gap: 8px; padding: 10px 14px; flex: 1; }
+  .metric { background: #f7f7f7; border-radius: 4px; padding: 8px 8px; text-align: center; flex: 1; }
+  .metric .number { font-size: 16px; font-weight: 700; color: #1a1a1a; }
+  .metric .label { font-size: 8px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-top: 2px; }
+  .quote-col { flex: 1; padding: 10px 14px; display: flex; align-items: center; border-left: 1px solid #f0f0f0; }
+  .quote { font-size: 10px; font-style: italic; color: #444; padding: 6px 10px; border-left: 3px solid #1a1a1a; background: #fafafa; width: 100%; }
+  .quote .attribution { font-style: normal; font-size: 9px; color: #888; margin-top: 3px; }
+
+  /* Footer */
+  .footer { margin-top: 16px; padding-top: 12px; border-top: 2px solid #1a1a1a; display: flex; justify-content: space-between; align-items: center; }
+  .footer .left { font-size: 10px; }
+  .footer .left strong { font-size: 12px; }
+  .footer .right { text-align: right; font-size: 9px; color: #888; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>WHAT WE BUILD</h1>
+  <div class="tagline">You bring the business. We bring the PEACE.</div>
+  <div class="sub">Etcetera Enterprises — Fractional CMO + Strategic Advisory</div>
+</div>
+
+<!-- PROOF OF CONCEPT HIGHLIGHT BAR -->
+<div class="highlight-bar">
+  <div class="left">
+    <h3>Proof of Concept: Customer Language Methodology</h3>
+    <p>Assessed a like-minded target audience through deep customer language research &mdash; extracting pain points, desire language, and objection patterns from real conversations. Built ad creative directly from that extraction. Launched a $176 Meta campaign to test whether the methodology could beat industry CTR benchmarks. It hit 10x. Now building the remainder of the funnel to convert clicks into clients.</p>
+  </div>
+  <div class="stats">
+    <div class="stat">
+      <div class="num">20.8%</div>
+      <div class="lbl">CTR (10x Industry Avg)</div>
+    </div>
+    <div class="stat">
+      <div class="num">$0.05</div>
+      <div class="lbl">Cost Per Click</div>
+    </div>
+    <div class="stat">
+      <div class="num">3,409</div>
+      <div class="lbl">Link Clicks</div>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENT 1: JEREMIAH -->
+<div class="client-card">
+  <div class="card-header">
+    <span class="client-name">PRIVATE WEALTH CLIENT</span>
+    <span class="client-type">Wealth Management & Concierge Services</span>
+  </div>
+  <div class="assess-grid">
+    <div class="assess-cell">
+      <h4>What They Came In With</h4>
+      <p>Decades of expertise across wealth management, concierge, and luxury services &mdash; but the founder was the only person who knew where anything was. Systems had accumulated with no consolidation. Client relationships had gone quiet. He knew the business was leaking &mdash; he just couldn't see where.</p>
+    </div>
+    <div class="assess-cell assess-reveal">
+      <h4>What Our Assessment Revealed</h4>
+      <ul>
+        <li>Dozens of platforms inventoried &mdash; vast majority producing zero revenue</li>
+        <li>Multiple brands competing with each other for the same client base</li>
+        <li>High-value client relationships untouched for years</li>
+        <li>Six figures in inquiries sitting unread across inboxes</li>
+        <li>No unified brand identity, no CRM, no reengagement system</li>
+        <li>Email infrastructure broken &mdash; DNS records misconfigured</li>
+      </ul>
+    </div>
+    <div class="assess-cell">
+      <h4>What We Built</h4>
+      <ul>
+        <li>Multi-brand consolidation into unified identity</li>
+        <li>Brand Messaging Platform</li>
+        <li>Premium service menu (one-pager)</li>
+        <li>Personalized client reengagement sequences</li>
+        <li>DNS & email infrastructure rebuild</li>
+        <li>AI operating system onboarding</li>
+      </ul>
+    </div>
+  </div>
+  <div class="results-row">
+    <div class="metrics-col">
+      <div class="metric">
+        <div class="number">6 Figures</div>
+        <div class="label">In Inquiries Surfaced</div>
+      </div>
+      <div class="metric">
+        <div class="number">50+</div>
+        <div class="label">Personalized Sequences</div>
+      </div>
+      <div class="metric">
+        <div class="number">Dozens→1</div>
+        <div class="label">Platform Consolidation</div>
+      </div>
+    </div>
+    <div class="quote-col">
+      <div class="quote">
+        "This has been a blessing. I don't think you understand the amount of stress I've had trying to maintain this. It's definitely peaceful now."
+        <div class="attribution">— CEO, Wealth Management Client</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENT 2: HEMMA -->
+<div class="client-card">
+  <div class="card-header">
+    <span class="client-name">OMNIALLIANCE</span>
+    <span class="client-type">Digital Education & Coaching Platform</span>
+  </div>
+  <div class="assess-grid">
+    <div class="assess-cell">
+      <h4>What They Came In With</h4>
+      <p>A digital product, a powerful founder story, and 100+ clients served historically &mdash; but $0 in current monthly revenue. Previous contractors completed tasks but missed the foundational gaps. She knew growth was stalled but couldn't pinpoint why.</p>
+    </div>
+    <div class="assess-cell assess-reveal">
+      <h4>What Our Assessment Revealed</h4>
+      <ul>
+        <li>Business Diagnostic scored 19/50 &mdash; Critical</li>
+        <li>3 of 5 health categories in the red (Financial Clarity, Operational Systems, Marketing Effectiveness)</li>
+        <li>Zero email list, zero funnel, zero lead capture</li>
+        <li>6 of 13 core tech stack functions completely missing</li>
+        <li>Brand strength scored 7/10 &mdash; the messaging existed but had no distribution</li>
+        <li>$336K estimated annual revenue sitting untapped</li>
+      </ul>
+    </div>
+    <div class="assess-cell">
+      <h4>What We Built</h4>
+      <ul>
+        <li>Brand Messaging Platform (13 sections)</li>
+        <li>Offer restructuring (digital product &rarr; mastermind)</li>
+        <li>Customer Language File & audience research</li>
+        <li>Go-to-market strategy</li>
+        <li>Meta ad creation & campaign launch</li>
+        <li>Landing page development (VSL-driven)</li>
+        <li>Funnel architecture & tracking setup</li>
+      </ul>
+    </div>
+  </div>
+  <div class="results-row">
+    <div class="metrics-col">
+      <div class="metric">
+        <div class="number">3.21%</div>
+        <div class="label">Ad CTR (Above Benchmark)</div>
+      </div>
+      <div class="metric">
+        <div class="number">$7</div>
+        <div class="label">CPM</div>
+      </div>
+    </div>
+    <div class="quote-col">
+      <div class="quote">
+        "If I had you five years ago, we would be winning. I feel super supported and confident that I've found the right partner to build my vision."
+        <div class="attribution">— Founder, OmniAlliance</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENT 3: AEROKEEPER -->
+<div class="client-card">
+  <div class="card-header">
+    <span class="client-name">AEROKEEPER</span>
+    <span class="client-type">Aviation Maintenance SaaS (AI Agents)</span>
+  </div>
+  <div class="assess-grid">
+    <div class="assess-cell">
+      <h4>What They Came In With</h4>
+      <p>A strong product with real market traction &mdash; email campaigns were getting high open rates and clicks. But demos weren't booking. The team knew interest existed but couldn't figure out where the drop-off was happening between click and conversation.</p>
+    </div>
+    <div class="assess-cell assess-reveal">
+      <h4>What Our Assessment Revealed</h4>
+      <ul>
+        <li>Analyzed 5 historical email campaigns &mdash; 42.1% open rate, 7% CTR confirmed strong top-of-funnel</li>
+        <li>2-3 week lag between email click and demo booking &mdash; friction was on the website, not in the emails</li>
+        <li>Homepage copy didn't match buyer decision sequence &mdash; features led, not outcomes</li>
+        <li>Contact page had no urgency, no social proof, no clear next step</li>
+        <li>Competitor analysis (Veryon) revealed positioning gaps in page hierarchy</li>
+        <li>No conversion tracking installed &mdash; zero visibility into what was working</li>
+      </ul>
+    </div>
+    <div class="assess-cell">
+      <h4>What We Built</h4>
+      <ul>
+        <li>Brand Messaging Platform</li>
+        <li>Customer Language File with competitor deep-dives</li>
+        <li>Homepage redesign (buyer decision sequence)</li>
+        <li>Contact page conversion optimization</li>
+        <li>Email campaign strategy & execution</li>
+        <li>Microsoft Clarity tracking setup</li>
+      </ul>
+    </div>
+  </div>
+  <div class="results-row">
+    <div class="metrics-col">
+      <div class="metric">
+        <div class="number">42.1%</div>
+        <div class="label">Email Open Rate</div>
+      </div>
+      <div class="metric">
+        <div class="number">7.0%</div>
+        <div class="label">CTR (7x Industry Avg)</div>
+      </div>
+    </div>
+    <div class="quote-col">
+      <div class="quote">
+        "Olivia brings a wealth of new ideas and different angles that are expanding the opportunity and giving us the edge on how best to market ourselves and get in front of our potential customers."
+        <div class="attribution">— Founder, AeroKeeper</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENT 4: MOQBUY -->
+<div class="client-card">
+  <div class="card-header">
+    <span class="client-name">MOQBUY</span>
+    <span class="client-type">Wholesale Group Purchasing Platform</span>
+  </div>
+  <div class="assess-grid">
+    <div class="assess-cell">
+      <h4>What They Came In With</h4>
+      <p>A profitable group purchasing platform with $47M+ in wholesale orders processed &mdash; but five years of zero business development. No outreach, no marketing, no new verticals explored. The founder knew the platform had value but had no strategy to grow beyond existing relationships.</p>
+    </div>
+    <div class="assess-cell assess-reveal">
+      <h4>What Our Assessment Revealed</h4>
+      <ul>
+        <li>Brand and website didn't reflect the scale or credibility of the platform ($47M+ processed)</li>
+        <li>Zero marketing collateral for new vertical outreach</li>
+        <li>No brand identity system &mdash; inconsistent presentation across touchpoints</li>
+        <li>Pet retail identified as highest-opportunity expansion vertical (108 products, 14 categories, 50-75% margins)</li>
+        <li>LinkedIn presence nonexistent despite B2B model</li>
+        <li>No email infrastructure for outbound prospecting</li>
+      </ul>
+    </div>
+    <div class="assess-cell">
+      <h4>What We Built</h4>
+      <ul>
+        <li>Full website redesign & brand repositioning</li>
+        <li>Customer Language File & audience research</li>
+        <li>Go-to-market strategy</li>
+        <li>LinkedIn presence launch</li>
+        <li>Vertical-targeted email outreach campaigns</li>
+        <li>Pet retail catalog (108 products, 14 categories)</li>
+        <li>Brand book & identity system (12 sections)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="results-row">
+    <div class="metrics-col">
+      <div class="metric">
+        <div class="number">30%</div>
+        <div class="label">Email Open Rate</div>
+      </div>
+      <div class="metric">
+        <div class="number">6</div>
+        <div class="label">New Verticals Targeted</div>
+      </div>
+    </div>
+    <div class="quote-col">
+      <div class="quote">
+        "A fresh facelift that makes the business look way more compelling to new verticals. Olivia's put together innovative campaigns to reach and explore new markets."
+        <div class="attribution">— Founder, MOQBuy</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENT 5: THE COLLECTIVE OM -->
+<div class="client-card">
+  <div class="card-header">
+    <span class="client-name">THE COLLECTIVE OM</span>
+    <span class="client-type">Workplace Wellness & Keynote Speaking</span>
+  </div>
+  <div class="assess-grid">
+    <div class="assess-cell">
+      <h4>What They Came In With</h4>
+      <p>A PhD in Public Health Sciences, a Fulbright Research Scholarship, a signature keynote, and real transformation results with clients &mdash; but every lead was handled manually, every proposal was written from scratch, and there was no system to turn a keynote audience into a paying client.</p>
+    </div>
+    <div class="assess-cell assess-reveal">
+      <h4>What Our Assessment Revealed</h4>
+      <ul>
+        <li>197 contacts across 5 audience segments with zero pipeline structure</li>
+        <li>No ascending offer path &mdash; $250 wellness classes and $14K annual partnerships lived in the same bucket</li>
+        <li>Corporate speaking (40% of revenue) had no dedicated collateral or outreach system</li>
+        <li>Post-keynote attendees had no follow-up sequence &mdash; warmest leads going cold</li>
+        <li>Dual brand (personal + company) creating positioning confusion</li>
+        <li>No proposal template &mdash; every corporate pitch rebuilt from zero</li>
+      </ul>
+    </div>
+    <div class="assess-cell">
+      <h4>What We Built</h4>
+      <ul>
+        <li>CRM architecture & funnel map (5 pipelines, 10-step offer ladder)</li>
+        <li>Speaker one sheet (keynote positioning)</li>
+        <li>Program menu (workplace wellness suite)</li>
+        <li>Sample proposal template (corporate-ready)</li>
+        <li>Lead magnet mockups</li>
+        <li>Email automation sequences by pipeline</li>
+        <li>Offer ladder ($250 &rarr; $20K ascending value)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="results-row">
+    <div class="metrics-col">
+      <div class="metric">
+        <div class="number">5</div>
+        <div class="label">Revenue Pipelines Built</div>
+      </div>
+      <div class="metric">
+        <div class="number">197</div>
+        <div class="label">Contacts Organized</div>
+      </div>
+      <div class="metric">
+        <div class="number">10</div>
+        <div class="label">Offer Tiers Mapped</div>
+      </div>
+    </div>
+    <div class="quote-col">
+      <div class="quote">
+        "I've never had anyone lay out my entire business like this. I can finally see where everything connects and where the revenue comes from."
+        <div class="attribution">— Dr. Ashlyn Schwartz, PhD, The Collective Om</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OMNIBRIDGE -->
+<div class="highlight-bar" style="background: #2D2D2D;">
+  <div class="left">
+    <h3>OmniBridge — AI-Powered Client Portal</h3>
+    <p>Proprietary platform built in-house. Executive dashboards, AI-powered CMO reviews, client journey tracking across the 4 E's (Explore, Embrace, Express, Evolve). Available to all partnership clients.</p>
+  </div>
+  <div class="stats">
+    <div class="stat">
+      <div class="num">13</div>
+      <div class="lbl">AI Agents</div>
+    </div>
+    <div class="stat">
+      <div class="num">4</div>
+      <div class="lbl">Phase Journey</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: VISUAL PORTFOLIO -->
+<div style="page-break-before: always;"></div>
+
+<div class="header" style="margin-top: 10px;">
+  <h1>DELIVERABLES IN ACTION</h1>
+  <div class="tagline">Websites, Landing Pages, Ad Creative, Email Campaigns & Platform</div>
+</div>
+
+<!-- ROW 1: MOQBUY BEFORE/AFTER -->
+<div style="margin-bottom: 16px;">
+  <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 6px;">MOQBuy — Website Redesign, Industry Diversification & Marketing Collateral</div>
+  <!-- Sub-row 1: Website Before/After + Email (scrollable screenshots) -->
+  <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Before</div>
+      <div style="width: 100%; height: 300px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px;">
+        <img src="assets/images/moqbuy-before.png" style="width: 100%; display: block;">
+      </div>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">After</div>
+      <div style="width: 100%; height: 300px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px;">
+        <img src="assets/images/moqbuy-after.png" style="width: 100%; display: block;">
+      </div>
+    </div>
+    <div style="flex: 0.6; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Email Campaign</div>
+      <div style="width: 100%; height: 300px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px;">
+        <img src="assets/images/moqbuy-email.png" style="width: 100%; display: block;">
+      </div>
+    </div>
+  </div>
+  <!-- Sub-row 2: Pet Retail Catalog + Brand Book (scrollable embedded PDFs) -->
+  <div style="display: flex; gap: 10px;">
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Pet Retail Catalog — 108 Products, 14 Categories</div>
+      <div style="width: 100%; height: 320px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden;">
+        <embed src="assets/pdfs/moqbuy-pet-catalog.pdf" type="application/pdf" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Brand Book — 12-Section Identity System</div>
+      <div style="width: 100%; height: 320px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden;">
+        <embed src="assets/pdfs/moqbuy-brand-book.pdf" type="application/pdf" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 2: AEROKEEPER -->
+<div style="margin-bottom: 16px;">
+  <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 6px;">AeroKeeper — Strategic Review, Customer Language Research & Homepage Redesign</div>
+  <!-- Sub-row 1: Website Before/After -->
+  <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Before</div>
+      <div style="width: 100%; height: 300px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px;">
+        <img src="assets/images/aerokeeper-before.png" style="width: 100%; display: block;">
+      </div>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">After</div>
+      <div style="width: 100%; height: 300px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px;">
+        <img src="assets/images/aerokeeper-after.png" style="width: 100%; display: block;">
+      </div>
+    </div>
+  </div>
+  <!-- Sub-row 2: Strategic Review + Customer Language File (Assess Phase artifacts) -->
+  <div style="display: flex; gap: 10px;">
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Strategic Review — What's Working / What We Found / Recommendations</div>
+      <div style="width: 100%; height: 320px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden;">
+        <embed src="assets/pdfs/aerokeeper-strategic-review.pdf" type="application/pdf" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Customer Language File — MRO Shop Owner Pain, Desire & Objection Language</div>
+      <div style="width: 100%; height: 320px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden;">
+        <embed src="assets/pdfs/aerokeeper-clf.pdf" type="application/pdf" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 3: OMNIALLIANCE -->
+<div style="margin-bottom: 16px;">
+  <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 6px;">OmniAlliance — Landing Page, Ad Creative, Campaign & Business Diagnostic</div>
+  <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Landing Page</div>
+      <div style="width: 100%; height: 300px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px;">
+        <img src="assets/images/omnialliance-landing.png" style="width: 100%; display: block;">
+      </div>
+    </div>
+    <div style="flex: 0.45; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Ad Creative</div>
+      <div style="width: 100%; height: 300px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px;">
+        <img src="assets/images/omnialliance-ad-1a.png" style="width: 100%; display: block;">
+      </div>
+    </div>
+    <div style="flex: 0.45; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Ad Creative</div>
+      <div style="width: 100%; height: 300px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px;">
+        <img src="assets/images/omnialliance-ad-1e.png" style="width: 100%; display: block;">
+      </div>
+    </div>
+  </div>
+  <!-- Sub-row 2: Business Diagnostic Report + Brand Messaging Platform -->
+  <div style="display: flex; gap: 10px;">
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">OmniBridge Business Diagnostic Report — AI-Generated CMO Analysis (Full)</div>
+      <div style="width: 100%; height: 320px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px;">
+        <iframe src="assets/omnialliance-diagnostic-report.html" style="width: 100%; height: 2400px; border: none; transform: scale(0.45); transform-origin: top left; width: 222%;"></iframe>
+      </div>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Brand Messaging Platform — Strategic Foundation Document</div>
+      <div style="width: 100%; height: 320px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden;">
+        <embed src="assets/pdfs/omnialliance-bmp.pdf" type="application/pdf" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 5: THE COLLECTIVE OM -->
+<div style="margin-bottom: 16px;">
+  <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 6px;">The Collective Om — Speaker Collateral, Program Menu, CRM Architecture & Proposal</div>
+  <!-- Sub-row 1: Speaker One Sheet + Program Menu + Lead Magnet Mockups -->
+  <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Speaker One Sheet</div>
+      <div style="width: 100%; height: 320px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden;">
+        <embed src="assets/pdfs/tco-speaker-one-sheet.pdf" type="application/pdf" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Program Menu</div>
+      <div style="width: 100%; height: 320px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden;">
+        <embed src="assets/pdfs/tco-program-menu.pdf" type="application/pdf" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Sample Proposal</div>
+      <div style="width: 100%; height: 320px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden;">
+        <embed src="assets/pdfs/tco-sample-proposal.pdf" type="application/pdf" style="width: 100%; height: 100%;">
+      </div>
+    </div>
+  </div>
+  <!-- Sub-row 2: CRM Architecture Map (full width, landscape, scrollable both directions) -->
+  <div style="margin-bottom: 10px;">
+    <div style="text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">CRM Architecture & Funnel Map — 5 Pipelines, 197 Contacts, 10-Step Offer Ladder</div>
+      <div style="width: 100%; height: 400px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: auto;">
+        <iframe src="assets/pdfs/tco-crm-architecture.pdf" style="width: 1400px; height: 900px; border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+  <!-- Sub-row 3: Lead Magnet Mockups (embedded HTML, scrollable) -->
+  <div>
+    <div style="text-align: center;">
+      <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #aaa; margin-bottom: 4px;">Lead Magnet Mockups</div>
+      <div style="width: 100%; height: 350px; border: 1px solid #e0e0e0; border-radius: 4px; overflow: auto;">
+        <iframe src="assets/tco-lead-magnet-mockups.html" style="width: 100%; height: 2000px; border: none;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 6: OMNIBRIDGE -->
+<div style="margin-bottom: 16px;">
+  <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 6px;">OmniBridge — AI-Powered Client Dashboard (Proprietary Platform)</div>
+  <div style="text-align: center;">
+    <img src="assets/images/omnibridge-dashboard.png" style="width: 80%; border: 1px solid #e0e0e0; border-radius: 6px; max-height: 260px; object-fit: cover; object-position: center;">
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="left">
+    <strong>Etcetera Enterprises</strong><br>
+    Olivia Rouse, Fractional CMO<br>
+    oliviarou00@gmail.com
+  </div>
+  <div class="right">
+    Partner. Execution. Architecture.<br>
+    Clarity. & Everything Else.<br><br>
+    etceteraenterprises.com
+  </div>
+</div>
+
+</body>
+</html>

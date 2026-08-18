@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Collective Om — Lead Magnet Mock-Ups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#8B7B9E;
+    --purple-deep:#6E5F82;
+    --purple-soft:#EDE9F1;
+    --teal:#2E8BC7;
+    --teal-soft:#E4F1F9;
+    --gold:#C9A84C;
+    --gold-soft:#F6EFD9;
+    --amber:#D98A3D;
+    --amber-soft:#FBEEDF;
+    --ink:#2C2733;
+    --muted:#7A7382;
+    --line:#E8E4ED;
+    --white:#fff;
+    --bg:#F4F1F7;
+    --shadow:0 18px 50px rgba(78,63,99,.16);
+    --shadow-sm:0 6px 20px rgba(78,63,99,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
+  .serif{font-family:'Playfair Display',serif}
+
+  /* ---------- top bar ---------- */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar-inner{max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .name{font-family:'Playfair Display',serif;font-weight:600;font-size:1.05rem;letter-spacing:.3px}
+  .brand .name small{display:block;font-family:'Inter';font-weight:400;font-size:.66rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+  .navtabs{display:flex;gap:6px;flex-wrap:wrap}
+  .navtabs a{text-decoration:none;font-size:.8rem;font-weight:500;color:var(--purple-deep);padding:7px 14px;border-radius:999px;border:1px solid var(--line);transition:.2s}
+  .navtabs a:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
+
+  /* ---------- hero ---------- */
+  .hero{max-width:1180px;margin:0 auto;padding:54px 28px 26px;text-align:center}
+  .hero .kicker{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+  .hero h1{font-size:2.7rem;font-weight:600;color:var(--ink);margin-bottom:14px}
+  .hero p{max-width:680px;margin:0 auto;color:var(--muted);font-size:1.02rem}
+  .hero .prepared{margin-top:18px;font-size:.8rem;color:var(--muted);letter-spacing:.4px}
+
+  /* ---------- option section ---------- */
+  section.option{max-width:1180px;margin:0 auto;padding:46px 28px}
+  .opt-head{display:flex;align-items:flex-start;gap:18px;margin-bottom:8px}
+  .opt-badge{flex:none;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff}
+  .opt-a .opt-badge{background:linear-gradient(135deg,var(--purple),var(--purple-deep))}
+  .opt-b .opt-badge{background:linear-gradient(135deg,var(--teal),#1f6fa0)}
+  .opt-c .opt-badge{background:linear-gradient(135deg,var(--gold),#a8862f)}
+  .opt-head h2{font-size:1.7rem;font-weight:600}
+  .opt-head .sub{color:var(--muted);font-size:.92rem;margin-top:2px}
+  .opt-meta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 30px}
+  .chip{font-size:.74rem;font-weight:500;padding:6px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--purple-deep)}
+  .chip b{color:var(--ink)}
+
+  .screens{display:grid;gap:30px}
+  .screen-label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .screen-label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* ---------- device frames ---------- */
+  .browser{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+  .browser-bar{background:#F4F1F7;padding:11px 16px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--line)}
+  .dot{width:11px;height:11px;border-radius:50%}
+  .dot.r{background:#E98C84}.dot.y{background:#E7C25C}.dot.g{background:#8FC892}
+  .browser-bar .url{margin-left:12px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:4px 14px;font-size:.72rem;color:var(--muted);flex:1;max-width:320px}
+
+  .phone{max-width:330px;margin:0 auto;background:#fff;border-radius:34px;box-shadow:var(--shadow);padding:11px;border:1px solid var(--line)}
+  .phone-screen{border-radius:25px;overflow:hidden;border:1px solid var(--line)}
+  .phone-notch{height:22px;display:flex;justify-content:center;align-items:center}
+  .phone-notch::before{content:"";width:80px;height:5px;border-radius:3px;background:#D9D3E0}
+
+  .two-up{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+  @media(max-width:880px){.two-up{grid-template-columns:1fr}}
+
+  /* ---------- generic page content inside frames ---------- */
+  .pg{padding:30px}
+  .pg-tight{padding:24px}
+  .logo-row{display:flex;align-items:center;gap:9px}
+  .logo-row .name{font-family:'Playfair Display',serif;font-weight:600;font-size:.92rem}
+  .logo-row .name small{display:block;font-family:'Inter';font-weight:400;font-size:.58rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+
+  .eyebrow{font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;color:var(--gold)}
+  .lp-h{font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;margin:14px 0 10px;line-height:1.15}
+  .lp-sub{color:var(--muted);font-size:.95rem;max-width:440px}
+  .hero-img{border-radius:14px;height:170px;margin:22px 0;background-size:cover;background-position:center;position:relative;overflow:hidden}
+  .hero-img .ov{position:absolute;inset:0;background:linear-gradient(120deg,rgba(110,95,130,.28),rgba(46,139,199,.12))}
+  .quote{position:absolute;left:18px;bottom:16px;right:18px;color:#fff;font-family:'Playfair Display',serif;font-style:italic;font-size:.92rem;text-shadow:0 2px 12px rgba(0,0,0,.4);z-index:2}
+  .quote span{display:block;font-style:normal;font-family:'Inter';font-size:.72rem;margin-top:6px;opacity:.92}
+
+  .btn{display:inline-block;background:var(--purple);color:#fff;font-weight:600;font-size:.92rem;padding:14px 30px;border-radius:11px;text-align:center;box-shadow:0 8px 22px rgba(139,123,158,.4)}
+  .btn.full{display:block;width:100%}
+  .btn.teal{background:var(--teal);box-shadow:0 8px 22px rgba(46,139,199,.4)}
+  .btn.gold{background:var(--gold);box-shadow:0 8px 22px rgba(201,168,76,.4)}
+  .btn.ghost{background:#fff;color:var(--purple-deep);border:1.5px solid var(--purple)}
+
+  .trustbar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:18px;font-size:.72rem;color:var(--muted);font-weight:500;letter-spacing:.4px}
+  .trustbar span{padding:0 4px}
+
+  .valprops{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:22px 0}
+  .vp{text-align:center;padding:14px 8px;border-radius:12px;background:var(--purple-soft)}
+  .vp .ic{width:38px;height:38px;margin:0 auto 8px;border-radius:10px;background:#fff;display:grid;place-items:center;color:var(--purple-deep)}
+  .vp b{display:block;font-size:.78rem;color:var(--ink)}
+  .vp small{font-size:.68rem;color:var(--muted)}
+
+  /* quiz */
+  .progress{height:7px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:6px}
+  .progress i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--purple),var(--teal))}
+  .q-count{font-size:.72rem;color:var(--muted);font-weight:500;text-align:right;margin-bottom:24px}
+  .q-text{font-family:'Playfair Display',serif;font-size:1.32rem;font-weight:500;line-height:1.3;margin-bottom:26px}
+  .opts{display:grid;gap:10px}
+  .opt-card{border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.9rem;font-weight:500;display:flex;align-items:center;gap:12px;cursor:default;transition:.15s;background:#fff}
+  .opt-card .key{flex:none;width:26px;height:26px;border-radius:7px;background:var(--purple-soft);color:var(--purple-deep);display:grid;place-items:center;font-size:.78rem;font-weight:700}
+  .opt-card.sel{border-color:var(--purple);background:var(--purple-soft)}
+  .opt-card.sel .key{background:var(--purple);color:#fff}
+
+  /* results */
+  .score-badge{text-align:center;padding:26px 20px;border-radius:16px;margin-bottom:22px}
+  .score-badge .num{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;line-height:1}
+  .score-badge .tier{font-size:.82rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-top:6px}
+  .amber-tier{background:var(--amber-soft);color:var(--amber)}
+  .teal-tier{background:var(--teal-soft);color:var(--teal)}
+  .result-msg{font-size:.94rem;color:#3f3947;margin-bottom:22px}
+  .cta-box{background:var(--purple-soft);border-radius:14px;padding:22px;text-align:center;margin-bottom:20px}
+  .cta-box h4{font-size:1.15rem;font-weight:600;margin-bottom:14px}
+
+  .rrr{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px}
+  .rrr .step{text-align:center;padding:14px 8px;border-radius:12px}
+  .rrr .step .ic{width:40px;height:40px;border-radius:11px;margin:0 auto 8px;display:grid;place-items:center;color:#fff}
+  .rrr .step b{font-size:.8rem;display:block}
+  .rrr .step small{font-size:.66rem;color:var(--muted)}
+  .reg{background:var(--purple-soft)} .reg .ic{background:var(--purple)}
+  .ref{background:var(--teal-soft)} .ref .ic{background:var(--teal)}
+  .rec{background:var(--gold-soft)} .rec .ic{background:var(--gold)}
+
+  .ftr{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:.72rem;color:var(--muted);text-align:center}
+
+  /* ---------- PDF mock (option B) ---------- */
+  .pdf-page{background:#fff;border-radius:14px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+  .pdf-tag{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:center;margin-bottom:10px}
+  .pdf-inner{padding:34px}
+  .pdf-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:2px solid var(--purple-soft);margin-bottom:22px}
+  .pdf-title{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:700;letter-spacing:1px;color:var(--purple-deep)}
+  .pdf-subtitle{color:var(--muted);font-size:.9rem;font-style:italic;margin-bottom:26px}
+  .pdf-sec-label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px}
+  .when-list{list-style:none;display:grid;gap:9px;margin-bottom:26px}
+  .when-list li{display:flex;gap:10px;align-items:flex-start;font-size:.86rem}
+  .when-list li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--teal);margin-top:7px}
+  .breath-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;position:relative}
+  @media(max-width:620px){.breath-cards{grid-template-columns:1fr}}
+  .bcard{border-radius:14px;padding:18px;color:#fff;position:relative;overflow:hidden;min-height:158px}
+  .bcard .n{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;opacity:.5}
+  .bcard h4{font-size:1.02rem;font-weight:700;margin:4px 0 8px}
+  .bcard p{font-size:.76rem;line-height:1.5;opacity:.95}
+  .bcard.b1{background:linear-gradient(150deg,var(--purple),var(--purple-deep))}
+  .bcard.b2{background:linear-gradient(150deg,var(--teal),#1f6fa0)}
+  .bcard.b3{background:linear-gradient(150deg,var(--gold),#a8862f)}
+  .wave{height:34px;margin:18px 0 2px;display:block;width:100%}
+
+  .neuro{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;background:var(--purple-soft);border-radius:14px;padding:22px;margin-bottom:24px}
+  @media(max-width:620px){.neuro{grid-template-columns:1fr}}
+  .neuro ul{list-style:none;display:grid;gap:8px}
+  .neuro li{font-size:.84rem;display:flex;gap:9px}
+  .neuro li b{color:var(--purple-deep)}
+  .brain-svg{width:120px;height:120px;margin:0 auto}
+
+  .offerings{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0 24px}
+  @media(max-width:620px){.offerings{grid-template-columns:1fr}}
+  .offer{border:1.5px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+  .offer b{font-size:.82rem;display:block;margin-bottom:3px}
+  .offer small{font-size:.7rem;color:var(--muted)}
+
+  .about{display:grid;grid-template-columns:70px 1fr 84px;gap:16px;align-items:center;background:#FAF8FC;border-radius:14px;padding:20px}
+  @media(max-width:620px){.about{grid-template-columns:1fr}}
+  .about .photo{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--teal));display:grid;place-items:center;color:#fff;font-family:'Playfair Display';font-size:1.5rem;font-weight:700}
+  .about .creds b{font-size:.92rem;font-family:'Playfair Display'}
+  .about .creds small{display:block;font-size:.74rem;color:var(--muted)}
+  .qr{width:84px;height:84px;border-radius:10px;display:grid;place-items:center;background:#fff;border:1px solid var(--line)}
+  .qr small{font-size:.6rem;color:var(--muted);text-align:center}
+
+  .two-path{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 4px}
+  @media(max-width:620px){.two-path{grid-template-columns:1fr}}
+  .path{border:1.5px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .path .tag{font-size:.66rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:8px}
+  .path h4{font-size:1rem;margin-bottom:12px;font-weight:600}
+
+  /* comparison + recommendation */
+  .closing{max-width:1180px;margin:0 auto;padding:20px 28px 70px}
+  .panel{background:#fff;border-radius:18px;box-shadow:var(--shadow-sm);padding:34px;border:1px solid var(--line);margin-bottom:26px}
+  .panel h2{font-size:1.5rem;font-weight:600;margin-bottom:6px}
+  .panel .lead{color:var(--muted);font-size:.92rem;margin-bottom:22px}
+  table.cmp{width:100%;border-collapse:collapse;font-size:.82rem}
+  table.cmp th,table.cmp td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.cmp thead th{font-family:'Playfair Display';font-weight:600;font-size:.9rem;color:var(--purple-deep)}
+  table.cmp tbody th{font-weight:600;color:var(--ink);width:24%}
+  table.cmp td{color:#4a4453}
+  .wrap-x{overflow-x:auto}
+  .rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+  @media(max-width:720px){.rec-grid{grid-template-columns:1fr}}
+  .rec-card{border-radius:14px;padding:20px;border:1px solid var(--line)}
+  .rec-card.hl{background:var(--gold-soft);border-color:var(--gold)}
+  .rec-card .when{font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:6px}
+  .rec-card b{font-size:1.05rem;font-family:'Playfair Display'}
+  .rec-card p{font-size:.85rem;color:#4a4453;margin-top:6px}
+  .final-note{background:linear-gradient(135deg,var(--purple-deep),var(--purple));color:#fff;border-radius:18px;padding:30px 34px}
+  .final-note h3{font-size:1.3rem;margin-bottom:10px}
+  .final-note p{font-size:.92rem;opacity:.95}
+
+  footer.pgftr{text-align:center;padding:30px;color:var(--muted);font-size:.78rem;border-top:1px solid var(--line)}
+
+  svg.ic-svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  svg.ic-lg{width:22px;height:22px;stroke:#fff;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+
+<!-- lotus logo reusable as inline svg via class -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <svg width="34" height="34" viewBox="0 0 48 48"><g fill="none" stroke="#8B7B9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 38c8-2 13-8 13-15 0 0-5 1-8 5"/><path d="M24 38c-8-2-13-8-13-15 0 0 5 1 8 5"/><path d="M24 38c4-3 6-9 6-16 0-5-2-9-6-13-4 4-6 8-6 13 0 7 2 13 6 16Z" fill="#EDE9F1"/></g></svg>
+      <div class="name">The Collective Om<small>Dr. Ashlyn Schwartz, PhD</small></div>
+    </div>
+    <div class="navtabs">
+      <a href="#optA">Option A · Assessment</a>
+      <a href="#optB">Option B · 3-Breath PDF</a>
+      <a href="#optC">Option C · Hybrid Quiz</a>
+      <a href="#compare">Compare</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="kicker">Lead Magnet Concepts · Client Review</div>
+  <h1>Three Ways to Turn a Keynote Into a Pipeline</h1>
+  <p>Visual mock-ups of three lead magnet concepts for The Collective Om. Each feeds the same core offer — 1:1 RRR Coaching and the RRR Foundations corporate program — through a different door.</p>
+  <div class="prepared">Prepared by Etcetera Enterprises &nbsp;·&nbsp; For Wednesday Review &nbsp;·&nbsp; June 23, 2026</div>
+</div>
+
+<!-- ============================ OPTION A ============================ -->
+<section class="option opt-a" id="optA">
+  <div class="opt-head">
+    <div class="opt-badge">A</div>
+    <div>
+      <h2>"Is Stress Running Your Leadership?" Assessment</h2>
+      <div class="sub">7-question scored assessment · Reveal-a-problem · Interactive quiz</div>
+    </div>
+  </div>
+  <div class="opt-meta">
+    <span class="chip"><b>Build:</b> Medium</span>
+    <span class="chip"><b>Deploy:</b> 1–2 weeks</span>
+    <span class="chip"><b>Data:</b> High — 7 points + score</span>
+    <span class="chip"><b>Segments:</b> 4 tiers</span>
+  </div>
+
+  <div class="screens">
+    <!-- Landing -->
+    <div>
+      <div class="screen-label">Landing Page</div>
+      <div class="browser">
+        <div class="browser-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url">thecollectiveom.com/leadership-stress</span></div>
+        <div class="pg">
+          <div class="logo-row">
+            <svg width="26" height="26" viewBox="0 0 48 48"><g fill="none" stroke="#8B7B9E" stroke-width="2.4" stroke-linecap="round"><path d="M24 38c4-3 6-9 6-16 0-5-2-9-6-13-4 4-6 8-6 13 0 7 2 13 6 16Z" fill="#EDE9F1"/><path d="M24 38c8-2 13-8 13-15 0 0-5 1-8 5"/><path d="M24 38c-8-2-13-8-13-15 0 0 5 1 8 5"/></g></svg>
+            <div class="name">The Collective Om<small>Dr. Ashlyn Schwartz, PhD</small></div>
+          </div>
+          <div style="text-align:center;margin-top:26px">
+            <div class="eyebrow">Free 2-Minute Assessment</div>
+            <h2 class="lp-h">Is Stress Running<br>Your Leadership?</h2>
+            <p class="lp-sub" style="margin:0 auto">A 2-minute assessment that reveals how much stress is driving your decisions, communication, and team dynamics.</p>
+          </div>
+          <div class="hero-img" style="background-image:url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=70')">
+            <div class="ov"></div>
+            <div class="quote">"Your nervous system is your most important leadership tool."<span>— Dr. Ashlyn Schwartz, PhD</span></div>
+          </div>
+          <div style="text-align:center">
+            <span class="btn">Take the Free Assessment</span>
+            <div class="trustbar"><span>PhD-Led</span>·<span>Evidence-Based</span>·<span>Used by 50+ Organizations</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz + Results side by side -->
+    <div class="two-up">
+      <div>
+        <div class="screen-label">Quiz Screen</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="pg-tight">
+              <div class="progress"><i style="width:28%"></i></div>
+              <div class="q-count">Question 2 of 7</div>
+              <div style="display:flex;justify-content:flex-end"><svg width="22" height="22" viewBox="0 0 48 48"><g fill="none" stroke="#C7BFD2" stroke-width="2.4" stroke-linecap="round"><path d="M24 38c4-3 6-9 6-16 0-5-2-9-6-13-4 4-6 8-6 13 0 7 2 13 6 16Z" fill="#F4F1F7"/></g></svg></div>
+              <div class="q-text">"When unexpected problems arise at work, I react before I have time to think clearly."</div>
+              <div class="opts">
+                <div class="opt-card"><span class="key">1</span>Never</div>
+                <div class="opt-card"><span class="key">2</span>Rarely</div>
+                <div class="opt-card sel"><span class="key">3</span>Sometimes</div>
+                <div class="opt-card"><span class="key">4</span>Often</div>
+                <div class="opt-card"><span class="key">5</span>Almost Always</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="screen-label">Results Screen</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="pg-tight">
+              <div class="score-badge amber-tier">
+                <div class="num">22<span style="font-size:1.1rem;opacity:.6">/35</span></div>
+                <div class="tier">Reactive Leader</div>
+              </div>
+              <p class="result-msg">Stress is driving more of your leadership than you'd like. Your team can feel it. The pattern is changeable — but not with information alone.</p>
+              <div class="cta-box">
+                <h4>Ready to shift from reactive to regulated?</h4>
+                <span class="btn full">Book a Call with Dr. Schwartz</span>
+              </div>
+              <div class="rrr">
+                <div class="step reg"><div class="ic"><svg class="ic-lg" viewBox="0 0 24 24"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg></div><b>Regulate</b><small>Calm the system</small></div>
+                <div class="step ref"><div class="ic"><svg class="ic-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></div><b>Reflect</b><small>Name the trigger</small></div>
+                <div class="step rec"><div class="ic"><svg class="ic-lg" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div><b>Reconnect</b><small>Choose response</small></div>
+              </div>
+              <div class="ftr">Dr. Ashlyn Schwartz, PhD · The Collective Om<br>ashlyn@thecollectiveom.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ OPTION B ============================ -->
+<section class="option opt-b" id="optB">
+  <div class="opt-head">
+    <div class="opt-badge">B</div>
+    <div>
+      <h2>"The 3-Breath Reset" Toolkit</h2>
+      <div class="sub">Single-page front/back PDF + 2-min video · Free step 1 of many</div>
+    </div>
+  </div>
+  <div class="opt-meta">
+    <span class="chip"><b>Build:</b> Low</span>
+    <span class="chip"><b>Deploy:</b> 3–5 days</span>
+    <span class="chip"><b>Data:</b> Name + email</span>
+    <span class="chip"><b>Best for:</b> Post-keynote take-home</span>
+  </div>
+
+  <div class="two-up">
+    <!-- FRONT -->
+    <div>
+      <div class="pdf-tag">PDF · Front Page</div>
+      <div class="pdf-page">
+        <div class="pdf-inner">
+          <div class="pdf-head">
+            <div class="logo-row">
+              <svg width="24" height="24" viewBox="0 0 48 48"><g fill="none" stroke="#8B7B9E" stroke-width="2.4" stroke-linecap="round"><path d="M24 38c4-3 6-9 6-16 0-5-2-9-6-13-4 4-6 8-6 13 0 7 2 13 6 16Z" fill="#EDE9F1"/></g></svg>
+              <div class="name">The Collective Om<small>Dr. Ashlyn Schwartz, PhD</small></div>
+            </div>
+          </div>
+          <div class="pdf-title">THE 3-BREATH RESET</div>
+          <div class="pdf-subtitle">A neuroscience-backed technique for leaders who need to regulate in real time — not on a meditation cushion.</div>
+
+          <div class="pdf-sec-label">When To Use This</div>
+          <ul class="when-list">
+            <li>Before a high-stakes meeting or difficult conversation</li>
+            <li>After a stressful interaction — before you send that email</li>
+            <li>When your chest tightens, jaw clenches, or thoughts race</li>
+            <li>In the car before walking into your house after work</li>
+            <li>Anytime you're reacting instead of responding</li>
+          </ul>
+
+          <div class="pdf-sec-label">The 3-Breath Reset</div>
+          <div class="breath-cards">
+            <div class="bcard b1"><div class="n">01</div><h4>NOTICE</h4><p><b>Regulate.</b> Inhale 4 counts, exhale 6. The longer exhale calms the system. Notice where the tension lives.</p></div>
+            <div class="bcard b2"><div class="n">02</div><h4>NAME</h4><p><b>Reflect.</b> Same breath. Ask: "What just activated me?" Move from autopilot to awareness.</p></div>
+            <div class="bcard b3"><div class="n">03</div><h4>CHOOSE</h4><p><b>Reconnect.</b> Same breath. Ask: "What do I actually want here?" Reactive becomes intentional.</p></div>
+          </div>
+          <svg class="wave" viewBox="0 0 600 40" preserveAspectRatio="none"><path d="M0 20 Q75 0 150 20 T300 20 T450 20 T600 20" fill="none" stroke="#C9A84C" stroke-width="2.5" opacity=".6"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACK -->
+    <div>
+      <div class="pdf-tag">PDF · Back Page</div>
+      <div class="pdf-page">
+        <div class="pdf-inner">
+          <div class="pdf-sec-label">The Neuroscience</div>
+          <div class="neuro">
+            <svg class="brain-svg" viewBox="0 0 120 120"><g fill="none" stroke="#6E5F82" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M44 30c-12 0-20 9-20 20 0 4 1 7 3 10-3 3-4 7-4 11 0 11 9 19 21 19h2V30h-2Z" fill="#fff"/><path d="M76 30c12 0 20 9 20 20 0 4-1 7-3 10 3 3 4 7 4 11 0 11-9 19-21 19h-2V30h2Z" fill="#EDE9F1"/><path d="M60 26v68M48 44c4 2 8 2 12 0M60 60c-5 2-9 1-12-2M60 74c4 3 9 3 13 0"/></g></svg>
+            <ul>
+              <li><b>0.07s</b>&nbsp;— the amygdala triggers the stress response faster than conscious thought.</li>
+              <li><b>Extended exhale</b> activates the vagus nerve, downshifting the system.</li>
+              <li><b>Conscious attention</b> re-engages the prefrontal cortex for clear thinking.</li>
+            </ul>
+          </div>
+          <p style="font-size:.84rem;color:#4a4453;margin-bottom:24px">This isn't relaxation — it's neurological regulation. It works in a boardroom, not just a yoga studio.</p>
+
+          <div class="pdf-sec-label">Beyond The Reset</div>
+          <div class="rrr" style="margin-bottom:16px">
+            <div class="step reg"><div class="ic"><svg class="ic-lg" viewBox="0 0 24 24"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg></div><b>Regulate</b></div>
+            <div class="step ref"><div class="ic"><svg class="ic-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></div><b>Reflect</b></div>
+            <div class="step rec"><div class="ic"><svg class="ic-lg" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div><b>Reconnect</b></div>
+          </div>
+          <p style="font-size:.84rem;color:#4a4453;font-style:italic;margin-bottom:14px">"If this one technique shifted your experience, imagine what a full program looks like."</p>
+          <div class="offerings">
+            <div class="offer"><b>1:1 Coaching</b><small>For individual leaders</small></div>
+            <div class="offer"><b>RRR Foundations</b><small>For teams</small></div>
+            <div class="offer"><b>Keynotes</b><small>For your stage</small></div>
+          </div>
+
+          <div class="about">
+            <div class="photo">AS</div>
+            <div class="creds"><b>Dr. Ashlyn Schwartz, PhD</b><small>Public Health Sciences · Fulbright Scholar · 50+ Engagements</small><small>ashlyn@thecollectiveom.com · (678) 447-3930</small></div>
+            <div class="qr">
+              <svg width="56" height="56" viewBox="0 0 56 56"><rect width="56" height="56" fill="#fff"/><g fill="#2C2733"><rect x="4" y="4" width="14" height="14"/><rect x="8" y="8" width="6" height="6" fill="#fff"/><rect x="38" y="4" width="14" height="14"/><rect x="42" y="8" width="6" height="6" fill="#fff"/><rect x="4" y="38" width="14" height="14"/><rect x="8" y="42" width="6" height="6" fill="#fff"/><rect x="24" y="6" width="4" height="4"/><rect x="30" y="12" width="4" height="4"/><rect x="24" y="18" width="4" height="4"/><rect x="38" y="24" width="4" height="4"/><rect x="46" y="30" width="4" height="4"/><rect x="24" y="30" width="4" height="4"/><rect x="30" y="36" width="4" height="4"/><rect x="38" y="42" width="4" height="4"/><rect x="46" y="46" width="6" height="6"/><rect x="24" y="44" width="4" height="4"/></g></svg>
+            </div>
+          </div>
+          <div class="ftr" style="font-style:italic;font-family:'Playfair Display';font-size:.9rem;color:var(--purple-deep)">"Lead from your nervous system." · The Collective Om</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ OPTION C ============================ -->
+<section class="option opt-c" id="optC">
+  <div class="opt-head">
+    <div class="opt-badge">C</div>
+    <div>
+      <h2>"Regulate First" — Nervous System Leadership Score</h2>
+      <div class="sub">5-question quiz + personalized tool · Reveal-a-problem + free step 1 (hybrid)</div>
+    </div>
+  </div>
+  <div class="opt-meta">
+    <span class="chip"><b>Build:</b> High</span>
+    <span class="chip"><b>Deploy:</b> 2–3 weeks</span>
+    <span class="chip"><b>Data:</b> Highest — 5 points + score + tool</span>
+    <span class="chip"><b>Lead quality:</b> Warmest</span>
+  </div>
+
+  <div class="screens">
+    <!-- Landing -->
+    <div>
+      <div class="screen-label">Landing Page</div>
+      <div class="browser">
+        <div class="browser-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="url">thecollectiveom.com/regulate-first</span></div>
+        <div class="pg">
+          <div class="logo-row">
+            <svg width="26" height="26" viewBox="0 0 48 48"><g fill="none" stroke="#8B7B9E" stroke-width="2.4" stroke-linecap="round"><path d="M24 38c4-3 6-9 6-16 0-5-2-9-6-13-4 4-6 8-6 13 0 7 2 13 6 16Z" fill="#EDE9F1"/></g></svg>
+            <div class="name">The Collective Om<small>Dr. Ashlyn Schwartz, PhD</small></div>
+          </div>
+          <div style="text-align:center;margin-top:24px">
+            <div class="eyebrow">Free · 90 Seconds</div>
+            <h2 class="lp-h">Regulate First</h2>
+            <p class="lp-sub" style="margin:0 auto">Discover your Nervous System Leadership Score — and get a personalized regulation tool based on your results.</p>
+          </div>
+          <div class="hero-img" style="background:linear-gradient(90deg,#5b5563 0%,#6f6878 48%,#C9A84C 52%,#e8c878 100%)">
+            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;color:#fff">
+              <div style="text-align:center;opacity:.85"><div style="font-size:1.6rem">😣</div><small style="font-size:.66rem">Stressed</small></div>
+              <div style="width:1px;height:60%;background:rgba(255,255,255,.5)"></div>
+              <div style="text-align:center"><div style="font-size:1.6rem">😌</div><small style="font-size:.66rem">Regulated</small></div>
+            </div>
+          </div>
+          <div class="valprops">
+            <div class="vp"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><b>5 Questions</b><small>90 seconds</small></div>
+            <div class="vp"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div><b>Personalized</b><small>To your score</small></div>
+            <div class="vp"><div class="ic"><svg class="ic-svg" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="1"/><path d="M12 9V6a2 2 0 1 0-4 0M12 9V6a2 2 0 1 1 4 0M4 13h16"/></svg></div><b>Free Tool</b><small>Use it tonight</small></div>
+          </div>
+          <div style="text-align:center">
+            <span class="btn">Get Your Score</span>
+            <div class="trustbar" style="margin-top:14px"><span>Based on a decade of neuroscience research by Dr. Ashlyn Schwartz, PhD, Fulbright Scholar</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz + Results -->
+    <div class="two-up">
+      <div>
+        <div class="screen-label">Quiz Screen</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="pg-tight">
+              <div class="progress"><i style="width:60%"></i></div>
+              <div class="q-count">Question 3 of 5</div>
+              <div class="q-text">"My team's behavior around me when I'm stressed..."</div>
+              <div class="opts">
+                <div class="opt-card"><span class="key">A</span>Doesn't seem to change much</div>
+                <div class="opt-card sel"><span class="key">B</span>They give me a little more space</div>
+                <div class="opt-card"><span class="key">C</span>They become noticeably more cautious</div>
+                <div class="opt-card"><span class="key">D</span>They avoid bringing me problems</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="screen-label">Personalized Results Page</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="pg-tight">
+              <div class="score-badge teal-tier">
+                <div class="num">11<span style="font-size:1.1rem;opacity:.6">/20</span></div>
+                <div class="tier">Pressured Leader</div>
+              </div>
+              <p class="result-msg">You're managing, but the compensations are adding up. The tools you've tried work in calm settings but fail when pressure is real. That's not a willpower problem — it's a nervous system problem.</p>
+
+              <div class="pdf-sec-label" style="color:var(--teal)">Your Personalized Reset · The 3-Breath Reset</div>
+              <div class="rrr" style="margin-bottom:8px">
+                <div class="step reg"><div class="ic"><svg class="ic-lg" viewBox="0 0 24 24"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg></div><b>Notice</b></div>
+                <div class="step ref"><div class="ic"><svg class="ic-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg></div><b>Name</b></div>
+                <div class="step rec"><div class="ic"><svg class="ic-lg" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div><b>Choose</b></div>
+              </div>
+              <p style="font-size:.74rem;color:var(--muted);margin-bottom:18px">This tool was selected for your score. Practice it before your next high-pressure moment.</p>
+
+              <div class="pdf-sec-label">Want To Go Deeper?</div>
+              <div class="two-path">
+                <div class="path"><div class="tag">For You</div><h4>1:1 Coaching</h4><span class="btn full ghost" style="font-size:.78rem;padding:9px">Book a Call</span></div>
+                <div class="path"><div class="tag">For Your Org</div><h4>RRR Foundations</h4><span class="btn full teal" style="font-size:.78rem;padding:9px">Learn More</span></div>
+              </div>
+              <div class="ftr">Your full results + personalized toolkit have been sent to your email.<br><br>Dr. Ashlyn Schwartz, PhD · The Collective Om</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ COMPARE ============================ -->
+<div class="closing" id="compare">
+  <div class="panel">
+    <h2>How They Compare</h2>
+    <p class="lead">Same destination, three different funnels. Here's the trade-off at a glance.</p>
+    <div class="wrap-x">
+      <table class="cmp">
+        <thead><tr><th>Factor</th><th>A · Assessment</th><th>B · 3-Breath Toolkit</th><th>C · Hybrid Quiz</th></tr></thead>
+        <tbody>
+          <tr><th>Build complexity</th><td>Medium</td><td>Low</td><td>High</td></tr>
+          <tr><th>Time to deploy</th><td>1–2 weeks</td><td>3–5 days</td><td>2–3 weeks</td></tr>
+          <tr><th>Data captured</th><td>High (7 pts + score)</td><td>Low (name + email)</td><td>Highest (5 pts + score + tool)</td></tr>
+          <tr><th>Lead quality</th><td>High — score qualifies intent</td><td>Medium — everyone gets the same</td><td>Highest — score + personalization</td></tr>
+          <tr><th>Completion rate</th><td>Medium (7 questions)</td><td>Highest (instant download)</td><td>Medium-high (5 questions)</td></tr>
+          <tr><th>Post-keynote fit</th><td>Good — "scan for your score"</td><td>Best — "take home what you felt"</td><td>Great — "score + your tool"</td></tr>
+          <tr><th>Segmentation</th><td>Strong (4 tiers)</td><td>None</td><td>Strongest (4 tiers + tool)</td></tr>
+          <tr><th>1:1 coaching bridge</th><td>Good</td><td>Weak</td><td>Best</td></tr>
+          <tr><th>Corporate bridge</th><td>Good</td><td>Weak</td><td>Best</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Recommendation</h2>
+    <p class="lead">Match the pick to the priority.</p>
+    <div class="rec-grid">
+      <div class="rec-card"><div class="when">If speed matters most</div><b>Option B</b><p>Ready for her next keynote in days. Lowest risk, fastest proof of concept.</p></div>
+      <div class="rec-card"><div class="when">If data &amp; segmentation matter most</div><b>Option C</b><p>The most work, but the smartest funnel — every lead pre-scored, pre-segmented, personally followed up.</p></div>
+      <div class="rec-card"><div class="when">If she wants to test first</div><b>B → C</b><p>Launch B now (fast, low risk), then upgrade to C once the pipeline justifies the build.</p></div>
+      <div class="rec-card hl"><div class="when">My recommendation for Wednesday</div><b>Present all three</b><p>Let Ashlyn react. Excited about the quiz? Build C. Wants something for her next stage immediately? Start with B, plan C for Month 2.</p></div>
+    </div>
+  </div>
+
+  <div class="final-note">
+    <h3>The thread through all three</h3>
+    <p>Every concept feeds the same core offer — 1:1 RRR Coaching into the RRR Foundations corporate program ($4,500–$9,000) — and reaches leaders through the four channels that matter: the post-keynote QR code, social, website capture, and networking follow-up. The only question is how much diagnosis and personalization to build in before the conversation starts.</p>
+  </div>
+</div>
+
+<footer class="pgftr">Etcetera Enterprises · Lead Magnet Mock-Ups for The Collective Om · June 23, 2026</footer>
+
+</body>
+</html>
